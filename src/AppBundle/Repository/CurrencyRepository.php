@@ -10,4 +10,17 @@ namespace AppBundle\Repository;
  */
 class CurrencyRepository extends \Doctrine\ORM\EntityRepository
 {
+
+    /**
+     * @return mixed
+     * @throws \Doctrine\ORM\NonUniqueResultException
+     */
+    public function findLastOne(){
+        $qb = $this->createQueryBuilder('c');
+        $qb->select('c')
+            ->orderBy("c.id", 'DESC');
+        $q = $qb->getQuery();
+
+        return $q->getOneOrNullResult();
+    }
 }
