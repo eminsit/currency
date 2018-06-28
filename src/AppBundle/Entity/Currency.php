@@ -21,6 +21,12 @@ class Currency
      */
     private $id;
 
+    /**
+     * @var array
+     *
+     * @ORM\Column(name="data", type="json")
+     */
+    private $data;
 
     /**
      * Get id
@@ -30,6 +36,27 @@ class Currency
     public function getId()
     {
         return $this->id;
+    }
+
+    /**
+     * Set data.
+     *
+     * @param array $data
+     *
+     */
+    public function setData($data)
+    {
+        $this->data = $data;
+    }
+
+    /**
+     * Get data.
+     *
+     * @return array
+     */
+    public function getData()
+    {
+        return $this->data;
     }
 }
 
