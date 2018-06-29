@@ -24,9 +24,9 @@ class Provider
     /**
      * @var string
      *
-     * @ORM\Column(name="name", type="string", length=255)
+     * @ORM\Column(name="code", type="string", length=255)
      */
-    private $name;
+    private $code;
 
     /**
      * @var string
@@ -34,21 +34,6 @@ class Provider
      * @ORM\Column(name="url", type="string", length=255)
      */
     private $url;
-
-    /**
-     * @var string|null
-     *
-     * @ORM\Column(name="root_parameter", type="string", length=100, nullable=true)
-     */
-    private $rootParameter;
-
-    /**
-     * @var array
-     *
-     * @ORM\Column(name="currency_reference", type="json")
-     */
-    private $currencyReference;
-
 
     /**
      * Get id.
@@ -63,25 +48,25 @@ class Provider
     /**
      * Set name.
      *
-     * @param string $name
+     * @param string $code
      *
      * @return Provider
      */
-    public function setName($name)
+    public function setCode($code)
     {
-        $this->name = $name;
+        $this->code = $code;
 
         return $this;
     }
 
     /**
-     * Get name.
+     * Get code.
      *
      * @return string
      */
     public function getName()
     {
-        return $this->name;
+        return $this->code;
     }
 
     /**
@@ -106,53 +91,5 @@ class Provider
     public function getUrl()
     {
         return $this->url;
-    }
-
-    /**
-     * Set rootParameter.
-     *
-     * @param string|null $rootParameter
-     *
-     * @return Provider
-     */
-    public function setRootParameter($rootParameter = null)
-    {
-        $this->rootParameter = $rootParameter;
-
-        return $this;
-    }
-
-    /**
-     * Get rootParameter.
-     *
-     * @return string|null
-     */
-    public function getRootParameter()
-    {
-        return $this->rootParameter;
-    }
-
-    /**
-     * Set currencyReference.
-     *
-     * @param array $currencyReference
-     *
-     * @return Provider
-     */
-    public function setCurrencyReference($currencyReference)
-    {
-        $this->currencyReference = $currencyReference;
-
-        return $this;
-    }
-
-    /**
-     * Get currencyReference.
-     *
-     * @return array
-     */
-    public function getCurrencyReference()
-    {
-        return $this->currencyReference;
     }
 }
