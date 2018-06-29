@@ -18,9 +18,18 @@ class CurrencyRepository extends \Doctrine\ORM\EntityRepository
     public function findLastOne(){
         $qb = $this->createQueryBuilder('c');
         $qb->select('c')
+            ->setMaxResults( 1 )
             ->orderBy("c.id", 'DESC');
         $q = $qb->getQuery();
 
-        return $q->getOneOrNullResult();
+        return $q->getSingleResult();
+    }
+
+    public function addOne($currency)
+    {
+        $response = $this->getEntityManager()->persist($currency);
+        $this->getEntityManager()->flush();
+
+        dump($response); die;
     }
 }
