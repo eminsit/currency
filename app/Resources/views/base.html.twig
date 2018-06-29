@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="../../../../favicon.ico">
+    <link rel="icon" href="https://cdn1.ntv.com.tr/gorsel/ekonomi/tl-simgesi-icin-secilen-7-tasarim/tl-simgesi-icin-secilen-7-tasarim,_x8_V8V9WUuOGpV-XK7VFw.jpg?w=960&mode=max&v=20120301142417000">
 
-    <title>Pricing example for Bootstrap</title>
+    <title>Currency</title>
 
     <!-- Bootstrap core CSS -->
     <link href="https://getbootstrap.com/docs/4.1/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -33,26 +33,26 @@
     <div class="card-deck mb-3 text-center">
         <div class="card mb-4 box-shadow">
             <div class="card-header">
-                <h4 class="my-0 font-weight-normal">  {{ data.usd.provider }}</h4>
+                <h4 class="my-0 font-weight-normal"> <i class="fas fa-dollar-sign"></i>  USD</h4>
             </div>
             <div class="card-body">
-                <h1 class="card-title pricing-card-title"><i class="fas fa-dollar-sign"></i> {{ data.usd.value }}</h1>
+                <h1 class="card-title pricing-card-title">{{ data.usd.value }}</h1>
             </div>
         </div>
         <div class="card mb-4 box-shadow">
             <div class="card-header">
-                <h4 class="my-0 font-weight-normal">{{ data.eur.provider }}</h4>
+                <h4 class="my-0 font-weight-normal"> <i class="fas fa-euro-sign"></i> EUR </h4>
             </div>
             <div class="card-body">
-                <h1 class="card-title pricing-card-title"><i class="fas fa-euro-sign"></i> {{ data.eur.value }} </h1>
+                <h1 class="card-title pricing-card-title"> {{ data.eur.value }} </h1>
             </div>
         </div>
         <div class="card mb-4 box-shadow">
             <div class="card-header">
-                <h4 class="my-0 font-weight-normal">{{ data.gbp.provider }}</h4>
+                <h4 class="my-0 font-weight-normal"><i class="fas fa-pound-sign"></i> GBP</h4>
             </div>
             <div class="card-body">
-                <h1 class="card-title pricing-card-title"><i class="fas fa-pound-sign"></i> {{ data.gbp.value }} </h1>
+                <h1 class="card-title pricing-card-title"> {{ data.gbp.value }} </h1>
             </div>
         </div>
     </div>
