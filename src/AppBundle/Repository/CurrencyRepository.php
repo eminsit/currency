@@ -30,6 +30,10 @@ class CurrencyRepository extends \Doctrine\ORM\EntityRepository
         $response = $this->getEntityManager()->persist($currency);
         $this->getEntityManager()->flush();
 
-        dump($response); die;
+        if (is_null($response)) {
+            return true;
+        }
+
+        return false;
     }
 }

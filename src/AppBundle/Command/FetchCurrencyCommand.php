@@ -77,8 +77,11 @@ class FetchCurrencyCommand extends ContainerAwareCommand
             'gbp' => ['value' => $gbpList[0]]
         ];
 
-        $this->addCurrency($result);
-        $output->writeln('Command result.');
+        if ($this->addCurrency($result)) {
+            $output->writeln('Success.');
+        } else {
+            $output->writeln('Failed.');
+        }
     }
 
     public function addCurrency(array $result)
@@ -86,7 +89,8 @@ class FetchCurrencyCommand extends ContainerAwareCommand
         $currenyEntity = new Currency();
         $currenyEntity->setData(json_encode($result));
         $repo2 = $this->em->getRepository('AppBundle:Currency');
-        $currency = $repo2->addOne($currenyEntity);
+
+        return $repo2->addOne($currenyEntity);
     }
 
 }
