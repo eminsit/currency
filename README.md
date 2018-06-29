@@ -1,4 +1,12 @@
 currency
 ========
 
-A Symfony project created on June 27, 2018, 8:15 pm.
+A Symfony project.
+
+clone the repository.
+
+run composer install. 
+
+run sql queries at app/Resource/data/db.sql
+
+and set your db credantials at parameters.yml
