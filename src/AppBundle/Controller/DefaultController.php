@@ -11,11 +11,14 @@ class DefaultController extends Controller
     /**
      * @Route("/", name="homepage")
      */
-    public function indexAction(Request $request)
+    public function indexAction()
     {
-        // replace this example code with whatever you need
+        $em = $this->getDoctrine()->getManager();
+        $repo2 = $em->getRepository('AppBundle:Currency');
+        $currency = $repo2->findLastOne();
+
         return $this->render('default/index.html.twig', [
-            'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
+            'data' => json_decode($currency->getData(), true)
         ]);
     }
 }
